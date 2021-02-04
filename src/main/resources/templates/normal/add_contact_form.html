@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+ th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+	<div class="card mr-3 ml-3" >
+		<div class="card-body">
+		
+		<h1 class="text-center">Add Contact</h1>
+		
+		<div class="contaioner-fluid mt-1">
+		
+		<div class="row">
+		<div class="col-md-10 offset-md-1">
+			<form action="#" th:object="${contact}" 
+			enctype="multipart/form-data"
+			method="post"
+			th:action="@{/user/process-contact}"
+			class="mt-2" >
+			
+			<!-- FirstName field -->
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa fa-plus"></i>
+					
+					</div>
+				
+				</div>
+				<input required type="text" id="firstName" name="name" placeholder="Enter Name here" class="form-control">
+			
+			
+			</div>
+			
+			<!-- Second Name/ NickName -->
+			
+			
+			<div class="input-group mt-3">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fas fa-user-alt"></i>
+					
+					</div>
+				
+				</div>
+				<input type="text" id="secondname" name="secondname" placeholder="Enter Nickname here" class="form-control">
+			
+			
+			</div>
+			
+			<!-- this is phone field -->
+			
+			<div class="input-group mt-3">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa fa-phone"></i>
+					
+					</div>
+				
+				</div>
+				<input required   type="number" id="phone" name="phone" placeholder="Enter Phone Number here" class="form-control">
+			
+			
+			</div>
+			
+			<!--Email field  -->
+			
+			<div class="input-group mt-3">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						@
+					
+					</div>
+				
+				</div>
+				<input required type="email" id="email" name="email" placeholder="Enter Email here" class="form-control">
+			
+			
+			</div>
+			
+			<!--work field  -->
+			
+			<div class="input-group mt-3">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa fa-briefcase"></i>
+					
+					</div>
+				
+				</div>
+				<input required type="text" id="work" name="work" placeholder="Enter Your Work here" class="form-control">
+			
+			
+			</div>
+			<!--Contact Description here  -->
+			
+			<div class="form-group mt-3">
+			<textarea id="mytextarea" name="description"  placeholder="Enter your Contact description here "  class="form-control" cols="30" rows="10"></textarea>
+			
+			</div>
+			
+			<!--Image field  -->
+			<div class="custom-file">
+				<input type="file" name="profileImage" />
+			</div>
+			
+			<div class="container text-center">
+				<button class="btn btn-outline-primary" >Save Contact</button>
+			</div>
+			
+			</form>
+		
+		</div>
+		
+		</div>
+		
+		</div>
+		
+		
+		</div>
+	
+	
+	
+	</div>
+	<!--tiny tool for making ms word like textfield  -->
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+	 <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+    
+    <!-- active side bar jqureycode -->
+    <script>
+			$(document).ready(()=>{
+				$(".item").removeClass("active");
+				$("#addContact-link").addClass("active");
+			});
+
+		</script>
+    	
+	</section>
+
+</body>
+</html>
